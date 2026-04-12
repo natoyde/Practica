@@ -86,7 +86,7 @@ class Jugador{
             delete nivel;
             if (puntos>=1000){
                 nivel=new Senior;
-            }else if (puntos>=100){
+            }else if (puntos>=100 && puntos<1000){
                 nivel= new SemiSr;
             }else {
                 nivel=new Junior;
@@ -96,6 +96,9 @@ class Jugador{
         string getnombre(){ return nombre; }
         int getlogro(){ return cantidadlogros; }
         string getnivel(){ return nivel->getnombrenivel(); }
+        ~Jugador(){
+            delete nivel;
+        }
 
 };
 
